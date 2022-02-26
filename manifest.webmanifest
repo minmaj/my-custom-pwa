@@ -1,5 +1,4 @@
 {
     "name": "My Custom PWA",
-    "lang": "fr-FR",
-    "start_url": "/"
+    "lang": "fr-FR"
 }

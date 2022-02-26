@@ -1,13 +1,13 @@
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker
-      .register('./scripts/sw.js')
+      .register('scripts/sw.js')
       .then(() => { console.log('Service Worker Registered'); });
   }
 
 console.log("main.js has been loaded...");
 
 let deferredPrompt;  
-const addBtn = document.querySelector('#install-button');  
+const addBtn = document.querySelector('#install');  
 addBtn.style.display = 'none';  
 
 window.addEventListener('beforeinstallprompt', (e) => {  
