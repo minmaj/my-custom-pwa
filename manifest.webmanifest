@@ -1,4 +1,16 @@
 {
+    "background_color": "grey",
+    "description": "An example of what can do a Progressive Web App.",
+    "display": "fullscreen",
+    "icons": [
+      {
+        "src": "images/rubik.png",
+        "sizes": "256x256",
+        "type": "image/png"
+      }
+    ],
     "name": "My Custom PWA",
-    "lang": "fr-FR"
-}
+    "short_name": "Custom PWA",
+    "start_url": "/my-custom-pwa/index.html"
+  }
+  
