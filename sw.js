@@ -29,11 +29,10 @@ self.addEventListener('fetch', function(fetch_event) {
         let server_response = fetch(fetch_event.request).then(function(server_response) {
           return caches.open(cache_name).then(function(cache) {
             console.log('[Service Worker] Mise en cache de la nouvelle ressource: ' + fetch_event.request.url);
-            cache.put(e.request, server_response.clone());
+            cache.put(fetch_event.request, server_response.clone());
             return server_response;
           });
         });
-
         return server_response;
       }
     });
