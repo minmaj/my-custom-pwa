@@ -21,9 +21,7 @@ self.addEventListener('fetch', function(fetch_event) {
   fetch_event.respondWith(response_handler);
 
   function response_handler() {
-    console.log(fetch_event);
-
-    caches.match(fetch_event.request).then(function(cache_response) {
+    return caches.match(fetch_event.request).then(function(cache_response) {
       console.log('[Service Worker] Récupération de la ressource: ' + fetch_event.request.url);
       if(cache_response) {
         return cache_response;
