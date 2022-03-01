@@ -16,24 +16,25 @@ self.addEventListener('install', function(evt) {
 */
 
 self.addEventListener('fetch', function(fetch_event) {
-  fetch_event.respondWith(response_handler);
+  console.log(fetch_event);
+  // fetch_event.respondWith(response_handler);
 
-  function response_handler() {
-    caches.match(fetch_event.request).then(function(cache_response) {
-      console.log('[Service Worker] Récupération de la ressource: ' + fetch_event.request.url);
-      if(cache_response) {
-        return cache_response;
-      }
-      else {
-        let fetch_response = fetch(fetch_event.request).then(function(server_response) {
-          return caches.open(cache_name).then(function(cache) {
-            console.log('[Service Worker] Mise en cache de la nouvelle ressource: ' + fetch_event.request.url);
-            cache.put(fetch_event.request, server_response.clone());
-            return server_response;
-          });
-        });
-        return fetch_response;
-      }
-    });
-  }
+  // function response_handler() {
+  //   caches.match(fetch_event.request).then(function(cache_response) {
+  //     console.log('[Service Worker] Récupération de la ressource: ' + fetch_event.request.url);
+  //     if(cache_response) {
+  //       return cache_response;
+  //     }
+  //     else {
+  //       let fetch_response = fetch(fetch_event.request).then(function(server_response) {
+  //         return caches.open(cache_name).then(function(cache) {
+  //           console.log('[Service Worker] Mise en cache de la nouvelle ressource: ' + fetch_event.request.url);
+  //           cache.put(fetch_event.request, server_response.clone());
+  //           return server_response;
+  //         });
+  //       });
+  //       return fetch_response;
+  //     }
+  //   });
+  // }
 });
