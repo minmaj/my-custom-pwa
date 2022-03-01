@@ -5,7 +5,6 @@ self.addEventListener('install', function(evt) {
       cache.addAll([  
         "index.html",
         "scripts/main.js",
-        "sw.js",
         "images/rubik-128x128.png",
         "images/rubik-256x256.png"
       ]);  
